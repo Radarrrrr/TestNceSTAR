@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>NotificationService.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>NotificationViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>NotifyExtensionList.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>NotifyExtensionProduct.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>TestNCEDeom.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0C3522081DEFCFC900D9DBEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C879BB61DD468CF00C3E86E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C879BD41DD4692900C3E86E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C8B17B61DED5E3800FC3305</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0CFAD5601DFAB2FC0080EFBE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
