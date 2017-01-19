@@ -10,10 +10,11 @@
 #import <UserNotifications/UserNotifications.h>
 #import "ViewController.h"
 #import "RDPushSimuVC.h"
+#import "RDUserNotifyCenter.h"
 #import <Home/Home.h>
 
 
-@interface AppDelegate ()
+@interface AppDelegate () <RDUserNotifyCenterDelegate>
 
 @end
 
@@ -29,6 +30,21 @@
     mainNav.navigationBarHidden = NO;
     mainNav.navigationBar.translucent = NO; //不要导航条模糊，为了让页面从导航条下部是0开始，如果为YES，则从屏幕顶部开始是0
     self.window.rootViewController = mainNav;
+    
+    
+    //注册和使用通知相关-----------------------------------------------------------------------------------------------------
+    //注册
+    [[RDUserNotifyCenter sharedCenter] registerUserNotification:self completion:^(BOOL success) {
+        //do sth..
+    }];
+    
+    //绑定action到category
+    [[RDUserNotifyCenter sharedCenter] prepareBindingActions];
+    [[RDUserNotifyCenter sharedCenter] appendAction:@"action_enter" actionTitle:@"进去看看" options:UNNotificationActionOptionForeground toCategory:@"myNotificationCategory"];
+    [[RDUserNotifyCenter sharedCenter] appendAction:@"action_exit" actionTitle:@"关闭" options:UNNotificationActionOptionDestructive toCategory:@"myNotificationCategory"];
+    [[RDUserNotifyCenter sharedCenter] bindingActions];
+    //---------------------------------------------------------------------------------------------------------------------
+    
     
     
     //清空本地通知badge数量
@@ -94,6 +110,28 @@
 }
 /***********************************************************************************************************/
 
+
+
+#pragma mark -
+#pragma mark RDUserNotifyCenterDelegate 相关返回方法
+- (void)didReceiveNotificationResponse:(UNNotificationResponse*)response content:(UNNotificationContent*)content isLocal:(BOOL)blocal
+{
+    NSString     *actionID      = response.actionIdentifier;
+    //    NSString     *categoryID    = content.categoryIdentifier;
+    //    NSDictionary *userInfo      = content.userInfo;
+    
+    
+    if([actionID isEqualToString:@"com.apple.UNNotificationDefaultActionIdentifier"])
+    {
+        //点击内容窗口进来的
+        NSLog(@"点击内容窗口进来的");
+    }
+    else
+    {
+        //点击自定义Action按钮进来的
+        NSLog(@"点击自定义Action按钮进来的 actionID: %@", actionID);
+    }
+}
 
 
 

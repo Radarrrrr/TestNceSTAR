@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-//#import "RDPushSimuVC.h"
+#import "RDPushSimuVC.h"
 
 
 @interface HomeViewController ()
@@ -35,8 +35,8 @@
 
 - (void)addMsgAction:(id)sender
 {
-//    RDPushSimuVC *simuVC = [[RDPushSimuVC alloc] init];
-//    [self.navigationController pushViewController:simuVC animated:YES];
+    RDPushSimuVC *simuVC = [[RDPushSimuVC alloc] init];
+    [self.navigationController pushViewController:simuVC animated:YES];
     
 }
 
